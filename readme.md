@@ -32,7 +32,7 @@ Replace  /path/to/Android/Sdk with the actual path. To make it permanent add the
 
 ### PATH variable on windows 
 
-Open control panel
+Open control panel  
 Then go to System
 Then go to Change Environment Variables of the User
 Then click create a new environment variables
