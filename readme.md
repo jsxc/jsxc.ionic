@@ -33,10 +33,10 @@ Replace  /path/to/Android/Sdk with the actual path. To make it permanent add the
 ### PATH variable on windows 
 
 Open control panel  
-Then go to System
-Then go to Change Environment Variables of the User
-Then click create a new environment variables
-Create a new variable named ANDROID_HOME
+Then go to System  
+Then go to Change Environment Variables of the User  
+Then click create a new environment variables  
+Create a new variable named ANDROID_HOME  
 Set its value to your Android directory, like C:/users/<username>/.android
 
 Replace C:/users/<username>/.android with the actual path.
