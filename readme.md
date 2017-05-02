@@ -45,8 +45,10 @@ Replace C:/users/<username>/.android with the actual path.
 
 Edit /etc/paths and add 
 
+```bash
 /Users/username/Libs/Android/sdk/platform-tools
 /Users/username/Libs/Android/sdk/tools
+```
 
 Replace /Users/username/Libs/Android/sdk with the actual path.
 
