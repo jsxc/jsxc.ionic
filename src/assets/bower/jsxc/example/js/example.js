@@ -3,9 +3,9 @@
 $(function() {
    var settings = {
       xmpp: {
-         url: '/http-bind/',
-         domain: 'localhost',
-         resource: 'example',
+         url: 'https://xmpp-test.kim.uni-konstanz.de:5280/http-bind/',
+         domain: '/xmpp-test.kim.uni-konstanz.de',
+         resource: 'dasdasbgerbt534634756',
          overwrite: true
       }
    };
@@ -233,19 +233,4 @@ function testBoshServer(url, domain, cb) {
    });
 }
 
-$(function() {
-  jsxc.init({
-    loginForm: {
-      form: '#form',
-      jid: '#username',
-      pass: '#password'
-    },
-    logoutElement: $('#logout'),
-    root: '/jsxc.example/jsxc',
-    xmpp: {
-      url: 'http://localhost:5280/http-bind/',
-      domain: 'localhost',
-      resource: 'example'
-    }
-  });
-});
+
