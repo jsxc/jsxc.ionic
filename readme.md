@@ -70,6 +70,6 @@ ionic run android
 ```
 
 
-## To run the application on Android
+## To run the application on IOS
 
 Coming soon
