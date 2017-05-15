@@ -1,0 +1,23 @@
+{
+  "name": "jsxc.ionic",
+  "description": "jsxc-ionic: An Ionic project",
+  "main": "",
+  "authors": [
+    "Ionic Framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jsxc/jsxc.ionic",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "jsxc": "^3.1.1"
+  }
+}
