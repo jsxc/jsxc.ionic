@@ -4,7 +4,7 @@ $(function() {
    var settings = {
       xmpp: {
          url: 'https://xmpp-test.kim.uni-konstanz.de:5280/http-bind/',
-         domain: '/xmpp-test.kim.uni-konstanz.de',
+         domain: 'xmpp-test.kim.uni-konstanz.de',
          resource: 'dasdasbgerbt534634756',
          overwrite: true
       }
