@@ -3,12 +3,20 @@
 $(function() {
    var settings = {
       xmpp: {
-         url: 'https://xmpp-test.kim.uni-konstanz.de:5280/http-bind/',
-         domain: 'xmpp-test.kim.uni-konstanz.de',
+         url: '',
+         domain: '',
          resource: 'dasdasbgerbt534634756',
          overwrite: true
       }
    };
+
+   $('#bosh').change(function(){
+         settings.xmpp.url = $('#bosh').val()
+   });
+
+    $('#domain').change(function(){
+         settings.xmpp.domain = $('#domain').val()
+   })
 
    // Initialize core functions, intercept login form
    // and attach connection if possible.
