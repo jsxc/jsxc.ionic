@@ -9,6 +9,16 @@ You find a full list of features, supported protocols and browsers on [our homep
 If you are looking for install instructions or developer notes, please also checkout our [wiki](https://github.com/jsxc/jsxc/wiki/).
 
 
+## Prerequisite
+
+1) Install [NodeJS](https://nodejs.org/en/)
+2) Install [Ionic](https://ionicframework.com/getting-started/)
+3) Install npm dependencies and bower dependencies. Run the following comands in a terminal, where JSXC-Ionic was cloned:
+```bash
+npm install 
+bower install
+```
+
 ## To run the application in a browser 
 Go into the folder and run this code in a terminal:
 
