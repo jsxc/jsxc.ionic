@@ -10,12 +10,12 @@ $(function() {
       }
    };
 
-   $('#bosh').change(function(){
-         settings.xmpp.url = $('#bosh').val()
+    $('#bosh').change(function(){
+          settings.xmpp.url = $('#bosh').val()
    });
 
-    $('#domain').change(function(){
-         settings.xmpp.domain = $('#domain').val()
+     $('#domain').change(function(){
+          settings.xmpp.domain = $('#domain').val()
    })
 
    // Initialize core functions, intercept login form
