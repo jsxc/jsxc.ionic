@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 import { HomePage } from '../pages/home/home';
@@ -14,8 +15,21 @@ import { HomePage } from '../pages/home/home';
 export class MyApp {
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications) {
+    
+      public schedule() {
+    // Schedule a single notification
+    this.localNotifications.schedule({
+    id: 1,
+    text: 'Hello, World!',
+    sound: null
+});
+}
+    
     platform.ready().then(() => {
+
+
+
       backgroundMode.enable();
       setTimeout(function () {
                   // Modify the currently displayed notification
@@ -28,3 +42,5 @@ export class MyApp {
     });
   }
 }
+
+

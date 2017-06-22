@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       JSXC
     </ion-title>
@@ -16,4 +19,6 @@
   </form>
 
   <button id="logout">Logout</button>
+  <button ion-button full primary (click)="schedule()">Schedule</button>
+
 </ion-content>
