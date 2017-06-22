@@ -1,5 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Events } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
@@ -32,7 +32,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BackgroundMode,
-    LocalNotifications
+    LocalNotifications,
+    Events
   ]
 })
 export class AppModule {}
