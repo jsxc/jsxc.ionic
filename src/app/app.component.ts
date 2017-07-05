@@ -3,30 +3,40 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 import { HomePage } from '../pages/home/home';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  host: {
+    '(document:message.jsxc)': 'onKeyUp($event)'
+  }
 })
-export class MyApp {
-  rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode) {
-    
+
+
+export class MyApp {
+  rootPage: any = HomePage;
+
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications) {
+
+
+    // document.addEventListener('message.jsxc', function () {
+    //   console.log('try');
+    // })
+
     platform.ready().then(() => {
 
 
 
+      backgroundMode.configure({
+
+        text: 'JSXC is running in the background'
+      });
       backgroundMode.enable();
-      setTimeout(function () {
-                  // Modify the currently displayed notification
-                  backgroundMode.configure({
-                      text:'Running in background for more than 5s now.'
-                  });
-              }, 5000);
       statusBar.styleDefault();
       splashScreen.hide();
     });
