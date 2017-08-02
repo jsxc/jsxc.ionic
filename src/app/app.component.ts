@@ -6,7 +6,6 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
-import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 
 
