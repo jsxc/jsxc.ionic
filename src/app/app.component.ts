@@ -7,6 +7,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { HomePage } from '../pages/home/home';
 
 
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications) {
 
