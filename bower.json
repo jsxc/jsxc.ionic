@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
-    "jquery-ui": "^1.12.1",
-    "jsxc": "^3.1.1"
+    "jquery-ui": "^1.12.1"
   }
 }
