@@ -4217,7 +4217,7 @@ jsxc.gui.roster = {
       $('#jsxc_buddylist').slimScroll({
          distance: '3px',
          height: ($('#jsxc_roster').height() - 31) + 'px',
-         width: $('#jsxc_buddylist').width() + 'px',
+         width: '100%',
          color: '#fff',
          opacity: '0.5'
       });

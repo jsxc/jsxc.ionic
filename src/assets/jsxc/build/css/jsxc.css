@@ -2256,7 +2256,7 @@ fieldset[disabled]
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 204px;
+  width: 100%;
   z-index: 85; }
   #jsxc_buddylist .jsxc_unreadMsg .jsxc_name {
     padding-right: 0; }
@@ -2743,14 +2743,14 @@ fieldset[disabled]
       #jsxc_windowList > ul > li.jsxc_normal {
         -webkit-transition: width 0.2s;
                 transition: width 0.2s;
-        width: 250px; }
+        width: 100%; }
       #jsxc_windowList > ul > li.jsxc_min {
         -webkit-transition: width 0.2s;
                 transition: width 0.2s;
         width: 46px !important; }
         @media (min-width: 768px) {
           #jsxc_windowList > ul > li.jsxc_min {
-            width: 200px !important; } }
+            width: 100% !important; } }
         #jsxc_windowList > ul > li.jsxc_min .jsxc_emoticons {
           display: none; }
         #jsxc_windowList > ul > li.jsxc_min .jsxc_tools {
