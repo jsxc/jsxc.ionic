@@ -2422,7 +2422,7 @@ fieldset[disabled]
   top: 0;
   bottom: 0;
   right: 0;
-  width: 200px;
+  width: 100%;
   overflow: visible;
   border-left: 1px solid #e1e1e1;
   display: none;
@@ -2483,7 +2483,7 @@ fieldset[disabled]
     display: none; }
   #jsxc_roster.jsxc_state_hidden {
     display: block;
-    right: -200px;
+    right: -100%;
     -webkit-transition: right 0.5s;
             transition: right 0.5s; }
     #jsxc_roster.jsxc_state_hidden #jsxc_toggleRoster:before {
