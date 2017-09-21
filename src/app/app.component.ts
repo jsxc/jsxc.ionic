@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Autostart } from '@ionic-native/autostart';
 
 
 import { LoginPage } from '../pages/login/login';
@@ -21,7 +22,7 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   rootPage: any = LoginPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, private autostart: Autostart) {
 
 
     // document.addEventListener('message.jsxc', function () {
@@ -30,13 +31,15 @@ export class MyApp {
 
     platform.ready().then(() => {
 
-
-
+      
+      this.autostart.enable();
       backgroundMode.configure({
-
-        text: 'JSXC is running in the background'
+        silent:true
       });
       backgroundMode.enable();
+      platform.registerBackButtonAction(() => {
+        backgroundMode.moveToBackground();  
+      });
       statusBar.styleDefault();
       splashScreen.hide();
     });

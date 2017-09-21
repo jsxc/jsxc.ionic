@@ -13,6 +13,8 @@ import { HttpModule } from '@angular/http';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { IonicStorageModule } from '@ionic/storage';
+import { Autostart } from '@ionic-native/autostart';
+
 
 
 
@@ -40,7 +42,8 @@ import { IonicStorageModule } from '@ionic/storage';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BackgroundMode,
     LocalNotifications,
-    Events
+    Events,
+    Autostart
   ]
 })
 export class AppModule {}

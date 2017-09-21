@@ -10,11 +10,13 @@ import { Storage } from '@ionic/storage';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
 export class LoginPage {
   homePage = HomePage;
   parameters={
@@ -23,10 +25,12 @@ export class LoginPage {
     username:"",
     password:""
   }
+  
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
+  
 
   ionViewDidLoad() {
     this.storage.get('bosh').then((val) => {

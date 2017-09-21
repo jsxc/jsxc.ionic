@@ -1111,6 +1111,8 @@ jsxc = {
    }
 };
 
+window.jsxc = jsxc;
+
 /**
  * Handle XMPP stuff.
  *
