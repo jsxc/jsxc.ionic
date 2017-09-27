@@ -1,61 +1,6 @@
 /*jshint latedef: nofunc */
 
 $(function() {
-   var settings = {
-      xmpp: {
-         url: '',
-         domain: '',
-         resource: 'dasdasbgerbt534634756',
-         overwrite: true
-      }
-   };
-
-    $('#bosh').change(function(){
-          settings.xmpp.url = $('#bosh').val()
-   });
-
-     $('#domain').change(function(){
-          settings.xmpp.domain = $('#domain').val()
-   })
-
-   // Initialize core functions, intercept login form
-   // and attach connection if possible.
-   jsxc.init({
-      loginForm: {
-         form: '#form',
-         jid: '#username',
-         pass: '#password'
-      },
-      logoutElement: $('#logout'),
-      rosterAppend: 'body',
-      root: window.location.pathname.replace(/\/[^/]+$/, "/") + (window.location.pathname.match(/dev\.html/) ? '../dev' : '../build'),
-      displayRosterMinimized: function() {
-         return true;
-      },
-      loadSettings: function(username, password, cb) {
-         cb(settings);
-      },
-      xmpp: {
-         url: settings.xmpp.url
-      }
-   });
-
-   // helper variable
-   var source = '#form';
-
-   // AJAX login
-   $('#form2').submit(function(ev) {
-      ev.preventDefault();
-
-      source = $(this);
-      $('#submit2').button('loading');
-
-      jsxc.start($('#username2').val() + '@' + settings.xmpp.domain, $('#password2').val());
-   });
-
-   // Box Login
-   $('#form3 .submit').click(jsxc.gui.showLoginBox);
-
    // ============================================
    // Below you find only some helper to show/hide
    // logout buttons and similiar stuff.
@@ -147,6 +92,37 @@ $(function() {
    if (window.location.hostname === 'www.jsxc.org') {
       $('.jsxc-org').show();
    }
+});
+
+document.addEventListener('login.trigger', function(e){
+      var settings = {
+            xmpp: {
+               url: e.detail.bosh,
+               domain: e.detail.domain,
+               resource: 'dasdasbgerbt534634756',
+               overwrite: true
+            }
+         };
+      jsxc.init({
+            loginForm: {
+               form: '#form',
+               jid: '#username',
+               pass: '#password'
+            },
+            logoutElement: $('#logout'),
+            rosterAppend: 'body',
+            root: window.location.pathname.replace(/\/[^/]+$/, "/") + (window.location.pathname.match(/dev\.html/) ? '../dev' : '../build'),
+            displayRosterMinimized: function() {
+               return true;
+            },
+            loadSettings: function(username, password, cb) {
+               cb(settings);
+            },
+            xmpp: {
+               url: settings.xmpp.url
+            }
+      });
+      jsxc.start(e.detail.username, e.detail.password);
 });
 
 /**

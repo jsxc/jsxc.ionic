@@ -30,9 +30,7 @@ export class MyApp {
     // })
 
     platform.ready().then(() => {
-
-      
-      this.autostart.enable();
+     
       backgroundMode.configure({
         silent:true
       });
@@ -40,6 +38,7 @@ export class MyApp {
       platform.registerBackButtonAction(() => {
         backgroundMode.moveToBackground();  
       });
+      this.autostart.enable();
       statusBar.styleDefault();
       splashScreen.hide();
     });
