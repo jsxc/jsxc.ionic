@@ -3,6 +3,8 @@ import { IonicApp, IonicModule, IonicErrorHandler, Events } from 'ionic-angular'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { LoginFailPage } from '../pages/login-fail/login-fail';
+
 
 
 
@@ -22,7 +24,8 @@ import { Autostart } from '@ionic-native/autostart';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    LoginFailPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { Autostart } from '@ionic-native/autostart';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    LoginFailPage
   ],
   providers: [
     StatusBar,

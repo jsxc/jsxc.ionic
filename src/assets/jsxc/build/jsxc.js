@@ -316,6 +316,7 @@ jsxc = {
 
       $(document).on('attached.jsxc', jsxc.registerLogout);
       $(document).on('disconnected.jsxc', jsxc.relogin);
+      
 
       var isStorageAttachParameters = jsxc.storage.getItem('rid') && jsxc.storage.getItem('sid') && jsxc.storage.getItem('jid');
       var isOptionsAttachParameters = jsxc.options.xmpp.rid && jsxc.options.xmpp.sid && jsxc.options.xmpp.jid;
@@ -1242,6 +1243,8 @@ jsxc.xmpp = {
                $(document).trigger('attached.jsxc');
                break;
             case Strophe.Status.DISCONNECTED:
+               var disconnectedEvent = new Event('ionic.disconnected');
+               document.dispatchEvent(disconnectedEvent);
                $(document).trigger('disconnected.jsxc');
                break;
             case Strophe.Status.CONNFAIL:

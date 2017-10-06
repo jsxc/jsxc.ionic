@@ -1,6 +1,33 @@
 /*jshint latedef: nofunc */
 
+var settings = {
+      xmpp: {
+         url: 'empty',
+         domain: 'adb',
+         resource: 'dasdasbgerbt534634756',
+         overwrite: true
+      }
+   };
+
 $(function() {
+
+      
+      jsxc.init({
+            logoutElement: $('#logout'),
+            rosterAppend: 'body',
+            root: window.location.pathname.replace(/\/[^/]+$/, "/") + (window.location.pathname.match(/dev\.html/) ? '../dev' : '../build'),
+            displayRosterMinimized: function() {
+               return true;
+            },
+            loadSettings: function(username, password, cb) {
+               cb(settings);
+            },
+            xmpp: {
+               url: settings.xmpp.url
+            }
+            
+      });
+
    // ============================================
    // Below you find only some helper to show/hide
    // logout buttons and similiar stuff.
@@ -95,35 +122,17 @@ $(function() {
 });
 
 document.addEventListener('login.trigger', function(e){
-      var settings = {
-            xmpp: {
-               url: e.detail.bosh,
-               domain: e.detail.domain,
-               resource: 'dasdasbgerbt534634756',
-               overwrite: true
-            }
-         };
-      jsxc.init({
-            loginForm: {
-               form: '#form',
-               jid: '#username',
-               pass: '#password'
-            },
-            logoutElement: $('#logout'),
-            rosterAppend: 'body',
-            root: window.location.pathname.replace(/\/[^/]+$/, "/") + (window.location.pathname.match(/dev\.html/) ? '../dev' : '../build'),
-            displayRosterMinimized: function() {
-               return true;
-            },
-            loadSettings: function(username, password, cb) {
-               cb(settings);
-            },
-            xmpp: {
-               url: settings.xmpp.url
-            }
-      });
+
+      jsxc.options.set('xmpp', {url: e.detail.bosh});
       jsxc.start(e.detail.username, e.detail.password);
+
 });
+
+document.addEventListener('login.fail', function(e){
+            console.log("it works")
+            jsxc.xmpp.logout();
+      
+      });
 
 /**
  * Test if bosh server is up and running.

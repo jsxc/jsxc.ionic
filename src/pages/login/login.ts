@@ -21,7 +21,6 @@ export class LoginPage {
   homePage = HomePage;
   parameters={
     bosh:"",
-    domain:"",
     username:"",
     password:""
   }
@@ -33,18 +32,28 @@ export class LoginPage {
   
 
   ionViewDidLoad() {
-    this.storage.get('bosh').then((val) => {
+    this.storage.get('works').then((val) => {
       if (val!=null){
         this.navCtrl.push(HomePage);
+      } else {
+        this.storage.get('bosh').then((bosh) => {
+          this.storage.get('username').then((username) => {
+            this.storage.get('password').then((password) => {
+              this.parameters.bosh = bosh;
+              this.parameters.username = username;
+              this.parameters.password = password;
+            }); 
+          }); 
+        }); 
       }
     });
   }
 
   public navigateToHome() {
     this.storage.set('bosh',this.parameters.bosh);
-    this.storage.set('domain',this.parameters.domain);    
     this.storage.set('username',this.parameters.username);    
     this.storage.set('password',this.parameters.password); 
+    this.storage.set('works',"true"); 
     this.navCtrl.push(HomePage);
   }
 
