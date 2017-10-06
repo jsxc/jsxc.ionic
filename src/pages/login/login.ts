@@ -32,6 +32,7 @@ export class LoginPage {
   
 
   ionViewDidLoad() {
+    this.storage.set('navigated',null);    
     this.storage.get('works').then((val) => {
       if (val!=null){
         this.navCtrl.push(HomePage);
