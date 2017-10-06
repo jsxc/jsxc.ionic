@@ -3,7 +3,7 @@
     <name>JSXC</name>
     <description>Javascript XMPP client</description>
     <author email="klaus@jsxc.org" href="https://www.jsxc.org/">JSXC Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://134.34.225.192:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
