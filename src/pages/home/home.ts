@@ -22,16 +22,10 @@ export class HomePage {
     let store = this.storage;
     let nv = this.navCtrl;
     document.addEventListener('ionic.disconnected', function(e){
-      store.get('navigated').then((navigated) => {
-        if (navigated == null) {
-          store.set('works',null); 
-          let login_error = new CustomEvent('login.fail',{detail: "unkwown"});
-          document.dispatchEvent(login_error);
-          store.set('navigated',"true"); 
-          nv.push(LoginFailPage); 
-        }
-      });
-      
+      store.set('works',null); 
+      let login_error = new CustomEvent('login.fail',{detail: "unkwown"});
+      document.dispatchEvent(login_error);
+      nv.push(LoginFailPage); 
     });
     this.storage.get('bosh').then((bosh) => {
       this.storage.get('username').then((username) => {
