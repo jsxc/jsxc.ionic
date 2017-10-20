@@ -3,7 +3,7 @@
     <name>JSXC</name>
     <description>Javascript XMPP client</description>
     <author email="klaus@jsxc.org" href="https://www.jsxc.org/">JSXC Team</author>
-    <content original-src="index.html" src="http://134.34.225.192:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -52,14 +52,14 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <engine name="android" spec="^6.2.3" />
-    <plugin name="cordova-plugin-autostart" spec="^2.0.1" />
-    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
+    <plugin name="cordova-sqlite-storage" spec="^2.0.4" />
     <plugin name="cordova-plugin-console" spec="^1.0.5" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="^2.2.1" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
-    <plugin name="cordova-sqlite-storage" spec="^2.0.4" />
-    <plugin name="de.appplant.cordova.plugin.local-notification" spec="^0.8.5" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="de.appplant.cordova.plugin.local-notification" spec="^0.8.5" />
+    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
+    <plugin name="cordova-plugin-autostart" spec="^2.0.1" />
 </widget>
