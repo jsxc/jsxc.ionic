@@ -19,10 +19,8 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    let store = this.storage;
     let nv = this.navCtrl;
     document.addEventListener('ionic.disconnected', function(e){
-      store.set('works',null); 
       let login_error = new CustomEvent('login.fail',{detail: "unkwown"});
       document.dispatchEvent(login_error);
       nv.push(LoginFailPage); 
@@ -37,11 +35,6 @@ export class HomePage {
           document.dispatchEvent(login_event);
         }); 
       }); 
-    });  
-    
-    
-
+    });    
   }
-
-
 }
