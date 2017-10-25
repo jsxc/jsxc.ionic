@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Storage } from '@ionic/storage';
 import { LoginFailPage } from '../login-fail/login-fail';
 
@@ -15,7 +14,7 @@ import { LoginFailPage } from '../login-fail/login-fail';
 
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private localNotifications: LocalNotifications, private storage: Storage) {
+  constructor(public navCtrl: NavController, private storage: Storage) {
   }
 
   ionViewDidLoad() {

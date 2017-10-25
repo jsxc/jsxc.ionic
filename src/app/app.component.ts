@@ -3,7 +3,6 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
-import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Autostart } from '@ionic-native/autostart';
 
 
@@ -22,7 +21,7 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   rootPage: any = LoginPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, private autostart: Autostart) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private autostart: Autostart) {
 
 
     // document.addEventListener('message.jsxc', function () {
