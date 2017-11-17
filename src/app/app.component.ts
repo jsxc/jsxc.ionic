@@ -23,15 +23,11 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backgroundMode: BackgroundMode, private autostart: Autostart) {
 
-
-    // document.addEventListener('message.jsxc', function () {
-    //   console.log('try');
-    // })
-
     platform.ready().then(() => {
      
       backgroundMode.configure({
-        silent:true
+        silent:true,
+        hidden:true
       });
       backgroundMode.enable();
       platform.registerBackButtonAction(() => {
