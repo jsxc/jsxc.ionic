@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JSXC } from "jsxc";
 
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
