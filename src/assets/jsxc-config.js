@@ -11,22 +11,22 @@ var settings = {
 
 $(function() {
 
-      
-      jsxc.init({
-            logoutElement: $('#logout'),
-            rosterAppend: 'body',
-            root: window.location.pathname.replace(/\/[^/]+$/, "/") + (window.location.pathname.match(/dev\.html/) ? '../dev' : '../build'),
-            displayRosterMinimized: function() {
-               return true;
-            },
-            loadSettings: function(username, password, cb) {
-               cb(settings);
-            },
-            xmpp: {
-               url: settings.xmpp.url
-            }
-            
-      });
+
+      // jsxc.init({
+      //       logoutElement: $('#logout'),
+      //       rosterAppend: 'body',
+      //       root: window.location.pathname.replace(/\/[^/]+$/, "/") + (window.location.pathname.match(/dev\.html/) ? '../dev' : '../build'),
+      //       displayRosterMinimized: function() {
+      //          return true;
+      //       },
+      //       loadSettings: function(username, password, cb) {
+      //          cb(settings);
+      //       },
+      //       xmpp: {
+      //          url: settings.xmpp.url
+      //       }
+      //
+      // });
 
    // ============================================
    // Below you find only some helper to show/hide
@@ -131,7 +131,7 @@ document.addEventListener('login.trigger', function(e){
 document.addEventListener('login.fail', function(e){
             console.log("it works")
             jsxc.xmpp.logout();
-      
+
       });
 
 /**
